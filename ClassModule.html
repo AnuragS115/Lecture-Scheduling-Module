@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Lecture Scheduling Module</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="ClassModule.css">
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Lecture Scheduling Module</h1>
+
+        <!-- Navigation -->
+        <nav>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#courses" onclick="showSection('courses')">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#addCourse" onclick="showSection('addCourse')">Add Course</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#addLecture" onclick="showSection('addLecture')">Add Lecture</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Course List Section -->
+        <div id="courses" class="section mt-4">
+            <h2>Courses</h2>
+            <ul id="courseList" class="list-group"></ul>
+        </div>
+
+        <!-- Add Course Section -->
+        <div id="addCourse" class="section mt-4" style="display:none;">
+            <h2>Add Course</h2>
+            <form id="courseForm">
+                <div class="form-group">
+                    <label for="courseName">Course Name</label>
+                    <input type="text" class="form-control" id="courseName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="courseLevel">Course Level</label>
+                    <select class="form-control" id="courseLevel" required>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="courseDescription">Course Description</label>
+                    <textarea class="form-control" id="courseDescription" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="courseImage">Course Image</label>
+                    <input type="file" class="form-control-file" id="courseImage" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Course</button>
+            </form>
+        </div>
+
+        <!-- Add Lecture Section -->
+        <div id="addLecture" class="section mt-4" style="display:none;">
+            <h2>Add Lecture</h2>
+            <form id="lectureForm">
+                <div class="form-group">
+                    <label for="courseSelect">Select Course</label>
+                    <select class="form-control" id="courseSelect" required></select>
+                </div>
+                <div class="form-group">
+                    <label for="lectureTitle">Lecture Title</label>
+                    <input type="text" class="form-control" id="lectureTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="lectureDate">Lecture Date</label>
+                    <input type="datetime-local" class="form-control" id="lectureDate" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Lecture</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="ClassModule.js"></script>
+</body>
+
+</html>
